@@ -19,6 +19,7 @@ namespace TextEditor
         public bool OpenDocument()
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Rich Text Document|*.rtf|Text Document|*.txt";
             if(dlg.ShowDialog()==true)
             {
                 _currentFile = dlg.FileName;
@@ -62,6 +63,12 @@ namespace TextEditor
                 return SaveDocument();
             }
             return false;
+        }
+
+        public void ApplyToSelection(DependencyProperty property, object value)
+        {
+            if (value != null)
+                _textBox.Selection.ApplyPropertyValue(property, value);
         }
     }
 }
