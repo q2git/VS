@@ -19,7 +19,7 @@ namespace TextEditor
         public bool OpenDocument()
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Rich Text Document|*.rtf|Text Document|*.txt";
+            dlg.Filter = "Text Document|*.txt|Rich Text Document|*.rtf";
             if(dlg.ShowDialog()==true)
             {
                 _currentFile = dlg.FileName;
@@ -69,6 +69,17 @@ namespace TextEditor
         {
             if (value != null)
                 _textBox.Selection.ApplyPropertyValue(property, value);
+        }
+
+        public void NewDocument()
+        {
+            _currentFile = null;
+            _textBox.Document = new FlowDocument();
+        }
+
+        public bool CanSaveDocument()
+        {
+            return !string.IsNullOrEmpty(_currentFile);
         }
     }
 }

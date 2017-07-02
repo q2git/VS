@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA1C8293-0F5A-49F5-A7CE-9DB8A19A3A60}</ProjectGuid>
+    <ProjectGuid>{E089C6F5-6016-498D-B44C-9639AC097C55}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TextEditor</RootNamespace>
-    <AssemblyName>TextEditor</AssemblyName>
+    <RootNamespace>PreviewEvents</RootNamespace>
+    <AssemblyName>PreviewEvents</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,10 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,18 +53,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DocumentManager.cs" />
-    <Compile Include="PrintingPaginator.cs" />
-    <Compile Include="PrintManager.cs" />
-    <Compile Include="PrintPreviewDialog.xaml.cs">
-      <DependentUpon>PrintPreviewDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TextEditorMenu.xaml.cs">
-      <DependentUpon>TextEditorMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TextEditorToolbar.xaml.cs">
-      <DependentUpon>TextEditorToolbar.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,18 +65,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PrintPreviewDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TextEditorMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TextEditorToolbar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -117,21 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\folder_page.png" />
-    <Resource Include="Icons\page_add.png" />
-    <Resource Include="Icons\page_delete.png" />
-    <Resource Include="Icons\page_edit.png" />
-    <Resource Include="Icons\page_save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\cut.png" />
-    <Resource Include="Icons\page_copy.png" />
-    <Resource Include="Icons\page_paste.png" />
-    <Resource Include="Icons\text_bold.png" />
-    <Resource Include="Icons\text_italic.png" />
-    <Resource Include="Icons\text_underline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
