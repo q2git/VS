@@ -12,7 +12,7 @@ namespace CsharpEX17
 
     {
 
-        public static void Example17()
+        public static void Example()
 
         {
 

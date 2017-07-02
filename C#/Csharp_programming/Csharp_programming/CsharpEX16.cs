@@ -14,7 +14,7 @@ namespace CsharpEX16
 
     {
 
-        public static void Example16()
+        public static void Example()
 
         {
 

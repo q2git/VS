@@ -10,7 +10,7 @@ namespace CsharpEX20
 
     {
 
-        public static void Example20()
+        public static void Example()
 
         {
 

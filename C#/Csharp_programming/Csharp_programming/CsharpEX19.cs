@@ -14,7 +14,7 @@ namespace CsharpEX19
 
     {
 
-        public static void Example19()
+        public static void Example()
 
         {
 

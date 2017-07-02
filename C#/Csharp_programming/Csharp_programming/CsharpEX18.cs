@@ -14,7 +14,7 @@ namespace CsharpEX18
 
     {
 
-        public static void Example18()
+        public static void Example()
 
         {
 
