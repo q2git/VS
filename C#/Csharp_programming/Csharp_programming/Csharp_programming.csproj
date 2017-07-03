@@ -54,6 +54,9 @@
     <Compile Include="CsharpEX26.cs" />
     <Compile Include="CsharpEX27.cs" />
     <Compile Include="CsharpEX28.cs" />
+    <Compile Include="CsharpEX29.cs" />
+    <Compile Include="CsharpEX30.cs" />
+    <Compile Include="CsharpEX31.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

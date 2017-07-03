@@ -28,8 +28,11 @@ namespace Csharp_programming
             //CsharpEX24.Program.Example(); //例24 多态的演示
             //CsharpEX25.Program.Example(); //例25 宠物类
             //CsharpEX26.Program.Example(); //例26 运算符重载
-            CsharpEX27.Program.Example(); //例27 多态案例 员工工资
+            //CsharpEX27.Program.Example(); //例27 多态案例 员工工资
             //CsharpEX28.Program.Example(); //例28 接口
+            //CsharpEX29.Program.Example(); //例29 捕获异常
+            //CsharpEX30.Program.Example(); //例30 抛出异常
+            CsharpEX31.Program.Example(); //例31 泛型示例
 
             Console.ReadLine();
         }
