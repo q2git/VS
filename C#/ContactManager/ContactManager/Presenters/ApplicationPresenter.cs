@@ -9,7 +9,8 @@ namespace ContactManager.Presenters
     {
         private readonly ContactRepository _contactRepository;
         private ObservableCollection<Contact> _currentContacts;
-            private string _statusText;
+        private string _statusText;
+
         public ApplicationPresenter(Shell view,ContactRepository contactRepository): base(view)
         {
             _contactRepository = contactRepository;
@@ -101,7 +102,12 @@ namespace ContactManager.Presenters
         }
         public void DisplayAllContacts()
         {
-            throw new NotImplementedException();
+            View.AddTab(
+                new ContactListPresenter(
+                    this,
+                    new ContactListView()
+                    )
+                );
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ContactManager.Model
         private string _organization;
         private string _primaryEmail;
         private string _secondaryEmail;
+
         public Guid Id
         {
             get { return _id; }
