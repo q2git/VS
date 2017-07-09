@@ -6,7 +6,8 @@ using System.Reflection;
 //可以省略“Attribute”几个字母，只写xxxxx
 //可以带参数
 //• 位置参数 （相当于构造方法带的参数）
-//• 命名参数（域名或属性名=值）
+//• 命名参数（域名或属性名=值）
+
 //• 1．声明Attribute类
 //从System.Attribute继承而来
 //名字要用xxxxAttribute

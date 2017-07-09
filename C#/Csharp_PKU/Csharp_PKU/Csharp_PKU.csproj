@@ -70,6 +70,15 @@
     </Compile>
     <Compile Include="Week4\MultiCastDelegate.cs" />
     <Compile Include="Week4\Pointer.cs" />
+    <Compile Include="Week5\Iteration.cs" />
+    <Compile Include="Week5\List_Hashtable.cs" />
+    <Compile Include="Week5\Recursion.cs" />
+    <Compile Include="Week5\Recursion_CaylayTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week5\Recursion_CaylayTree.Designer.cs">
+      <DependentUpon>Recursion_CaylayTree.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +94,9 @@
     <EmbeddedResource Include="Week4\Lambda.resx">
       <DependentUpon>Lambda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Week5\Recursion_CaylayTree.resx">
+      <DependentUpon>Recursion_CaylayTree.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,5 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

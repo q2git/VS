@@ -84,5 +84,28 @@ namespace Csharp_PKU
         {
             Week4.TestUnsafe.Test();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Week5.ListTest.Test();
+            //Week5.SamplesHashtable.Test();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {    
+            Week5.TestDebugPi.Test(10);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Week5.Fibonacci.Test();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //Form frmTree = new Week5.Recursion_CaylayTree();
+            Form frmTree = new Week5.Recursion_CaylayTree2();
+            frmTree.Show();
+        }
     }
 }
