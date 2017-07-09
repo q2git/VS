@@ -43,6 +43,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -79,6 +80,15 @@
     <Compile Include="Week5\Recursion_CaylayTree.Designer.cs">
       <DependentUpon>Recursion_CaylayTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Week6\FileWatcher.cs" />
+    <Compile Include="Week6\ListAllFiles.cs" />
+    <Compile Include="Week6\Registry.cs" />
+    <Compile Include="Week6\SerializationTest.cs" />
+    <Compile Include="Week6\TextReadWrite.cs" />
+    <Compile Include="Week6\BinReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week6\Logger.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Week5\Recursion_CaylayTree.resx">
       <DependentUpon>Recursion_CaylayTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week6\BinReader.resx">
+      <DependentUpon>BinReader.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

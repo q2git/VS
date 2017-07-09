@@ -107,5 +107,41 @@ namespace Csharp_PKU
             Form frmTree = new Week5.Recursion_CaylayTree2();
             frmTree.Show();
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Week6.ListAllFiles.Test();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Week6.Watcher.Test();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //Week6.Logger.Test();
+            Week6.TextReadWrite.Test();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Form frmBinReader = new Week6.Form1();
+            frmBinReader.Show();
+            //Week6.BMPGenerator.GenBMP("Test.bmp", "hello world");
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Week6.SerializationTest.Program.TestBinary();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            string strRegkey = Week6.GpsTerm.Util.RegistryUtil.GetRegValue(
+                Microsoft.Win32.Registry.CurrentUser,
+                @"Software\WinRAR\ArcHistory", "0");
+            MessageBox.Show(strRegkey);
+        }
     }
 }
