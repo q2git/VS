@@ -6,7 +6,6 @@ namespace Csharp_PKU.Week6
     public class Watcher
 
     {
-
         public static void Test()
 
         {

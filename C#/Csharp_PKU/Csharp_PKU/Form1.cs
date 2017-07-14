@@ -143,5 +143,81 @@ namespace Csharp_PKU
                 @"Software\WinRAR\ArcHistory", "0");
             MessageBox.Show(strRegkey);
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            Form frmCalc = new Week7.calcForm();
+            frmCalc.Show();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Form frmFileManager = new Week7.FileManager();
+            frmFileManager.Show();
+        }
+
+        private void btnShow_Clicked(object sender, EventArgs e)
+        {
+            switch (((Button)sender).Text)
+            {
+                case "CheckBox RadioButton":
+                    new Week7.CheckBoxRadioButton().Show();
+                    break;
+                case "Checked ListBox":
+                    new Week7.CheckedListBox().Show();
+                    break;
+                case "ComboBox":
+                    new Week7.ComboBox().Show();
+                    break;
+                case "DateTime Picker":
+                    new Week7.DateTimePicker().Show();
+                    break;
+                case "Error Provider":
+                    new Week7.ErrorProvider().Show();
+                    break;
+                case "FileOpen Dialog":
+                    new Week7.FileOpenDialog().Show();
+                    break;
+                case "Month Calendar":
+                    new Week7.Calendar().Show();
+                    break;
+                case "PictureBox":
+                    new Week7.PictureBox().Show();
+                    break;
+                case "ProgressBar":
+                    new Week7.ProgressBar().Show();
+                    break;
+                case "ScrollBar TrackBar":
+                    new Week7.ScrollBarTrackBar().Show();
+                    break;
+                case "Timer ProgressBar":
+                    new Week7.TimerProgressBar().Show();
+                    break;
+                case "UpDown":
+                    new Week7.UpDown().Show();
+                    break;
+                case "TreeView":
+                    new Week7.TreeViewTest().Show();
+                    break;
+                case "Spliter":
+                    new Week7.Spliter().Show();
+                    break;
+                case "Panel AutoScroll":
+                    new Week7.PanelAutoScroll().Show();
+                    break;
+                case "ListView":
+                    new Week7.ListViewTest().Show();
+                    break;
+                case "ListBox":
+                    new Week7.ListBoxTest().Show();
+                    break;
+                case "ImageListTest":
+                    new Week7.ImageListTest().Show();
+                    break;
+                case "Panel And Layout":
+                    new Week7.PanelAndLayout().ShowDialog();
+                    break;
+            }
+        }
     }
 }

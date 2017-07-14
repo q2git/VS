@@ -23,19 +23,19 @@ namespace Csharp_PKU.Week6
 
                 FileStream fin = new FileStream(
 
-                infname, FileMode.Open, FileAccess.Read);
+                    infname, FileMode.Open, FileAccess.Read);
 
                 FileStream fout = new FileStream(
 
-                outfname, FileMode.Create, FileAccess.Write);
+                    outfname, FileMode.Create, FileAccess.Write);
 
                 StreamReader brin = new StreamReader(
 
-                fin, System.Text.Encoding.Default);
+                    fin, System.Text.Encoding.Default);
 
                 StreamWriter brout = new StreamWriter(
 
-                fout, System.Text.Encoding.Default);
+                    fout, System.Text.Encoding.Default);
 
                 int cnt = 0; // 行号
 

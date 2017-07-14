@@ -89,6 +89,69 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Week6\Logger.cs" />
+    <Compile Include="Week7\Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\CheckBoxRadioButtonTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\CheckedListBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ComboBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\DateTimePickerTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ErrorProviderTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\FileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\FileOpenDialogTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ImageListTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ListBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ListViewTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\MonthCalendarTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\PanelAndLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\PanelAutoScroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\PictureBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ProgressBarTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\ScrollBarTrackBarTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\SpliterTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\TimerProgressBarTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\TreeViewTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\UpDownTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +173,9 @@
     <EmbeddedResource Include="Week6\BinReader.resx">
       <DependentUpon>BinReader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Week7\FileManager.resx">
+      <DependentUpon>FileManager.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +189,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Week7\file.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Week7\folder.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
