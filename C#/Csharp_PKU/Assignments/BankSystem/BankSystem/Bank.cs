@@ -18,7 +18,7 @@ namespace BankSystem
 		    Account account = new Account(id, pwd, money);
 
 		    accounts.Add( account );
-            SaveAccount(account);
+            UpdateAccount(account);
 
 		    return account;
 	    }
@@ -28,7 +28,7 @@ namespace BankSystem
             CreditAccount account = new CreditAccount(id, pwd, credit);
 
             accounts.Add(account);
-            SaveAccount(account);
+            UpdateAccount(account);
 
             return account;
         }
@@ -44,9 +44,9 @@ namespace BankSystem
 		    return true;		
 	    }
 
-        public void SaveAccount(Account account)
+        public void UpdateAccount(Account account)
         {
-            dataStore.Save(account);
+            dataStore.Update(account);
         }
 
         public void DeleteAccount(Account account)

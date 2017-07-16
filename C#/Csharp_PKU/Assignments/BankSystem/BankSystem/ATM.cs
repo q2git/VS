@@ -79,16 +79,16 @@ namespace BankSystem
             msg += string.Format("\n{0, 50}", new string('-', 50));
             msg += String.Format("\n| {0, -20}| {1, -24} |", "CREATION DATE:", currentAccount.CreationDate);
             msg += string.Format("\n{0, 50}", new string('-', 50));
-            msg += String.Format("\n| {0, -20:c}| {1, -24} |", "BALANCE:", currentAccount.Balance);
+            msg += String.Format("\n| {0, -20}| {1, -24:C3} |", "BALANCE:", currentAccount.Balance);
             msg += string.Format("\n{0, 50}", new string('-', 50));
 
             if (currentAccount.Type == AccountType.CreditAccount)
             {
-                msg += String.Format("\n| {0, -20:c}| {1, -24} |", "CREADIT LIMIT:", ((CreditAccount)currentAccount).CreditLimit);
+                msg += String.Format("\n| {0, -20}| {1, -24:C3} |", "CREADIT LIMIT:", ((CreditAccount)currentAccount).CreditLimit);
                 msg += string.Format("\n{0, 50}", new string('-', 50));
-                msg += String.Format("\n| {0, -20:c}| {1, -24} |", "CURRENT CREDITS:", ((CreditAccount)currentAccount).Credits);
+                msg += String.Format("\n| {0, -20}| {1, -24:C3} |", "CURRENT CREDITS:", ((CreditAccount)currentAccount).Credits);
                 msg += string.Format("\n{0, 50}", new string('-', 50));
-                msg += String.Format("\n| {0, -20:c}| {1, -24} |", "CURRENT DEBTS:", ((CreditAccount)currentAccount).Debts);
+                msg += String.Format("\n| {0, -20}| {1, -24:C3} |", "CURRENT DEBTS:", ((CreditAccount)currentAccount).Debts);
                 msg += string.Format("\n{0, 50}", new string('-', 50));
             }
 
@@ -103,7 +103,7 @@ namespace BankSystem
                 double money = double.Parse(GetInput("save"));
 
                 currentAccount.SaveMoney(money);
-                bank.SaveAccount(currentAccount);
+                bank.UpdateAccount(currentAccount);
 
                 displayAccount();
             }
@@ -119,21 +119,32 @@ namespace BankSystem
             {
                 double money = double.Parse(GetInput("withdraw"));
 
-                if (new Random().Next(3) == 0)
-                    throw new BadCashException("Bad Cash");
-
                 currentAccount.WithdrawMoney(money);
+
+                //if (new Random().Next(3) == 0)
+                //    throw new BadCashException("Bad Cash");
+                try
+                {
+                    BadCash.GenerateBadCash(); 
+                }
+                catch (BadCashException e)
+                {
+                    throw new Exception("withdraw money failed", e); //for testing inner exception
+                }
 
                 if (BigMoneyFetched != null && money > 10000)
                     BigMoneyFetched(this, new BigMoneyArgs(currentAccount.ID, money));
 
-                bank.SaveAccount(currentAccount);
+                bank.UpdateAccount(currentAccount);
 
                 displayAccount();
             }
             catch (Exception e)
             {
                 Show("Error: " + e.Message);
+
+                if (e.InnerException != null)
+                    Show(string.Format("Error [InnerException]: {0}" , e.InnerException.Message));
             }
         }
 
@@ -142,7 +153,7 @@ namespace BankSystem
             try
             {
                 currentAccount.ChangePwd(GetInput("pwd"));
-                bank.SaveAccount(currentAccount);
+                bank.UpdateAccount(currentAccount);
             }
             catch (AccountException e)
             {
@@ -186,7 +197,7 @@ namespace BankSystem
         private void Show()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(new string('#', 70));
             Console.WriteLine(string.Format("{0, -19} Welcome to XXX Bank ATM System {1, 19}", 
                 new string('#', 15), new string('#', 15)));

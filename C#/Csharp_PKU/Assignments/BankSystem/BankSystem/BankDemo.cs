@@ -25,9 +25,10 @@ namespace BankSystem
             //throw new System.NotImplementedException();
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-            Console.WriteLine("$ Warning: Big Money Fetched! $");
-            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+            Console.WriteLine();
+            Console.WriteLine(string.Format("{0, -30}","Warning: Big Money Fetched!"));
+            Console.WriteLine(string.Format("{0, -15}{1, -15}", "Account ID: ", e.ID));
+            Console.WriteLine(string.Format("{0, -15}{1, -15:C3}", "Money: " , e.Money));
             Console.BackgroundColor = ConsoleColor.Black;
         }
 

@@ -69,12 +69,13 @@ namespace BankSystem
 
         public virtual void WithdrawMoney(double money)
         {
+
             if (money < 0)
-                throw new AccountException("negtive money");
+            throw new AccountException("negtive money");
 
             if (this.money < money)
                 throw new AccountException("not enough money");
-            
+
             this.money -= money;
         }
 

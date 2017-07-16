@@ -54,8 +54,16 @@ namespace BankSystem
         public BadCashException(string message)
             : base(message) { }
 
-        public BadCashException(string message, Exception inner)
-            : base(message, inner) { }
+    }
+
+
+    public class BadCash
+    {
+        public static void GenerateBadCash()
+        {
+            if (new Random().Next(3) == 0)
+                throw new BadCashException("Bad Cash");
+        }
     }
 
     public interface IATM

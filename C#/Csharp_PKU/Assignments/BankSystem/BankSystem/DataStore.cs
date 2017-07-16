@@ -10,18 +10,18 @@ namespace BankSystem
     public class DataStore
     {
         private List<Account> _accountStore;
-        private readonly string _filename;
+        private readonly string _storeName;
 
         public DataStore()
         {
-            _filename = Path.Combine(
+            _storeName = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
                 "AccountStore.bin");
 
             Deserialize();
         }
 
-        public void Save(Account account)
+        public void Update(Account account)
         {
             if (!_accountStore.Contains(account))
                 _accountStore.Add(account);
@@ -43,7 +43,7 @@ namespace BankSystem
 
         private void Serialize()
         {
-            using (FileStream stream = File.Open(_filename, FileMode.OpenOrCreate))
+            using (FileStream stream = File.Open(_storeName, FileMode.OpenOrCreate))
             {
                 //XmlSerializer serializer = new XmlSerializer(typeof(Account));
                 BinaryFormatter serializer = new BinaryFormatter();
@@ -53,9 +53,9 @@ namespace BankSystem
 
         private void Deserialize()
         {
-            if (File.Exists(_filename))
+            if (File.Exists(_storeName))
             {
-                using (FileStream stream = File.Open(_filename, FileMode.Open))
+                using (FileStream stream = File.Open(_storeName, FileMode.Open))
                 {
                     //XmlSerializer serializer = new XmlSerializer(typeof(Account));
                     BinaryFormatter serializer = new BinaryFormatter();
