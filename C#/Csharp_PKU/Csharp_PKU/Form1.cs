@@ -217,6 +217,31 @@ namespace Csharp_PKU
                 case "Panel And Layout":
                     new Week7.PanelAndLayout().ShowDialog();
                     break;
+                case "Pen Test":
+                    new Week8.PenTest().ShowDialog();
+                    break;
+                case "Font Test":
+                    new Week8.FontTest().ShowDialog();
+                    break;
+                case "Brush Test":
+                    new Week8.BrushTest().ShowDialog();
+                    break;
+                case "Draw Func":
+                    new Week8.DrawFunc().ShowDialog();
+                    break;
+                case "Transform":
+                    new Week8.TransformTest().ShowDialog();
+                    break;
+                case "PathGradient":
+                    new Week8.PathGradient().ShowDialog();
+                    break;
+                case "Regex Test":
+                    Week9.RegexTest.Test();
+                    break;
+                case "Regex Phone":
+                    Week9.RegexPhone.Test();
+                    break;
+
             }
         }
     }

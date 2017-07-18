@@ -152,6 +152,26 @@
     <Compile Include="Week7\UpDownTest.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Week8\BrushTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\DrawFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\FontTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\PathGradient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\PenTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\TransformTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week9\RegexPhone.cs" />
+    <Compile Include="Week9\RegexTest.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,5 +217,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

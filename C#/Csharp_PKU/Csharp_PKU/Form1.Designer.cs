@@ -72,6 +72,14 @@
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button47 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.button51 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -515,6 +523,86 @@
             this.button43.UseVisualStyleBackColor = true;
             this.button43.Click += new System.EventHandler(this.btnShow_Clicked);
             // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(510, 9);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(105, 34);
+            this.button44.TabIndex = 10;
+            this.button44.Text = "Pen Test";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(510, 49);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(105, 34);
+            this.button45.TabIndex = 10;
+            this.button45.Text = "Font Test";
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(510, 89);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(105, 34);
+            this.button46.TabIndex = 10;
+            this.button46.Text = "Brush Test";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button47
+            // 
+            this.button47.Location = new System.Drawing.Point(510, 129);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(105, 34);
+            this.button47.TabIndex = 10;
+            this.button47.Text = "Draw Func";
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(510, 169);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(105, 34);
+            this.button48.TabIndex = 10;
+            this.button48.Text = "Transform";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(510, 212);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(105, 34);
+            this.button49.TabIndex = 10;
+            this.button49.Text = "PathGradient";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button50
+            // 
+            this.button50.Location = new System.Drawing.Point(510, 253);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(105, 34);
+            this.button50.TabIndex = 10;
+            this.button50.Text = "Regex Test";
+            this.button50.UseVisualStyleBackColor = true;
+            this.button50.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button51
+            // 
+            this.button51.Location = new System.Drawing.Point(510, 293);
+            this.button51.Name = "button51";
+            this.button51.Size = new System.Drawing.Size(105, 34);
+            this.button51.TabIndex = 10;
+            this.button51.Text = "Regex Phone";
+            this.button51.UseVisualStyleBackColor = true;
+            this.button51.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -553,6 +641,14 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button51);
+            this.Controls.Add(this.button50);
+            this.Controls.Add(this.button49);
+            this.Controls.Add(this.button48);
+            this.Controls.Add(this.button47);
+            this.Controls.Add(this.button46);
+            this.Controls.Add(this.button45);
+            this.Controls.Add(this.button44);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button12);
@@ -618,6 +714,14 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button button51;
     }
 }
 

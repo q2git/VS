@@ -10,7 +10,7 @@ namespace CayleyTree
 
     {
         private Graphics graphics;
-
+        
         Random rnd = new Random();
 
         public CayleyTree()
@@ -83,6 +83,7 @@ namespace CayleyTree
 
             drawLine(x0, y0, x2, y2, c, width);
 
+
             drawTree(n - 1, x1, y1, per1 * leng * (0.5 + rand()), th + th1 * (0.5 + rand()), width);
             
             drawTree(n - 1, x2, y2, per2 * leng * (0.5 + rand()), th - th2 * (0.5 + rand()), width);
@@ -102,6 +103,7 @@ namespace CayleyTree
                 (int)x0, (int)y0, (int)x1, (int)y1
                 );
         }
+
 
     }
 
