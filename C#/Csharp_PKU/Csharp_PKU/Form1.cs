@@ -241,7 +241,27 @@ namespace Csharp_PKU
                 case "Regex Phone":
                     Week9.RegexPhone.Test();
                     break;
-
+                case "WebClient":
+                    Week10.WebClientTest.Test();
+                    break;
+                case "WebRequest":
+                    Week10.DownloadStringTest.Test();
+                    break;
+                case "WebEncoding":
+                    Week10.PageEncoding.Test();
+                    break;
+                case "DownloadImg":
+                    Week10.DownloadImg.Test();
+                    break;
+                case "XmlDocTest":
+                    Week10.XmlDocTest.Test();
+                    break;
+                case "XmlReader":
+                    Week10.XmlReaderTest.Test();
+                    break;
+                case "XmlWriter":
+                    Week10.XmlWriterTest.Test();
+                    break;
             }
         }
     }

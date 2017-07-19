@@ -54,6 +54,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Week10\DownloadImg.cs" />
+    <Compile Include="Week10\PageEncoding.cs" />
+    <Compile Include="Week10\WebClientTest.cs" />
+    <Compile Include="Week10\DownloadStringTest.cs" />
+    <Compile Include="Week10\XmlDocumentTest.cs" />
+    <Compile Include="Week10\XmlTextReaderTest.cs" />
+    <Compile Include="Week10\XmlTextWriterTest.cs" />
     <Compile Include="Week3\Enumeration.cs" />
     <Compile Include="Week3\Indexer.cs" />
     <Compile Include="Week3\Inheritance.cs" />
@@ -210,6 +217,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Week10\BookList.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Week10\items.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Week10\sampledata.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Week7\file.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
