@@ -87,6 +87,7 @@
             this.button56 = new System.Windows.Forms.Button();
             this.button57 = new System.Windows.Forms.Button();
             this.button58 = new System.Windows.Forms.Button();
+            this.button59 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -685,6 +686,17 @@
             this.button58.UseVisualStyleBackColor = true;
             this.button58.Click += new System.EventHandler(this.btnShow_Clicked);
             // 
+            // button59
+            // 
+            this.button59.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button59.Location = new System.Drawing.Point(632, 129);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(105, 34);
+            this.button59.TabIndex = 10;
+            this.button59.Text = "Xlst";
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -723,6 +735,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button59);
             this.Controls.Add(this.button58);
             this.Controls.Add(this.button57);
             this.Controls.Add(this.button56);
@@ -818,6 +831,7 @@
         private System.Windows.Forms.Button button56;
         private System.Windows.Forms.Button button57;
         private System.Windows.Forms.Button button58;
+        private System.Windows.Forms.Button button59;
     }
 }
 

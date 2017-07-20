@@ -262,6 +262,9 @@ namespace Csharp_PKU
                 case "XmlWriter":
                     Week10.XmlWriterTest.Test();
                     break;
+                case "Xlst":
+                    Week10.XlstTest.Test();
+                    break;
             }
         }
     }

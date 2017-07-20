@@ -61,6 +61,7 @@
     <Compile Include="Week10\XmlDocumentTest.cs" />
     <Compile Include="Week10\XmlTextReaderTest.cs" />
     <Compile Include="Week10\XmlTextWriterTest.cs" />
+    <Compile Include="Week10\XsltTest.cs" />
     <Compile Include="Week3\Enumeration.cs" />
     <Compile Include="Week3\Indexer.cs" />
     <Compile Include="Week3\Inheritance.cs" />
@@ -218,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Week10\BookList.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Week10\BookList.xslt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Week10\items.xml">
