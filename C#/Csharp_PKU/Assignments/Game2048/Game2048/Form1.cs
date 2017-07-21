@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -35,8 +36,12 @@ namespace Game2048
             this.Text = "Game2048";
             this.DoubleBuffered = true;
 
+            if(File.Exists("score.txt"))
+                labMaxScore.Text = File.ReadAllText("score.txt");
+
             StartGame();
         }
+
         private void StartGame()
         {
             //设置两个不同的块为随机的2或4
@@ -48,6 +53,7 @@ namespace Game2048
                 n2 = rnd.Next(N * N);
             }
             while (n1 == n2);
+
             board[n1 / N, n1 % N] = rnd.Next(2) * 2 + 2; //设为2或4
             board[n2 / N, n2 % N] = rnd.Next(2) * 2 + 2;
             
@@ -97,6 +103,7 @@ namespace Game2048
         {
             RefreshAllButtons();
         }
+
         private void RefreshAllButtons()
         {
             for (int i = 0; i < btns.Length; i++)
@@ -126,6 +133,10 @@ namespace Game2048
             else if (gameMode == 2)
             {
                 return str2[k];
+            }
+            else if (gameMode == 3)
+            {
+                return str3[k];
             }
             return "";
         }
@@ -163,6 +174,9 @@ namespace Game2048
             {
                 bMoved = upMove();
             }
+
+            labScore.Text = score.ToString(); //update score
+            if (score > int.Parse(labMaxScore.Text)) updateMaxScore(); //update Max score
 
             if (bMoved)
             {
@@ -231,6 +245,7 @@ namespace Game2048
             }
             return isMoved;
         }
+
         private bool upMove()
         {
             bool isMoved = false;
@@ -359,8 +374,6 @@ namespace Game2048
             return isMoved;
         }
 
- 
-
         private bool downMove()
         {
             bool isMoved = false;
@@ -452,6 +465,55 @@ namespace Game2048
             return true;
         }
 
+        private void modeChanged(object sender, EventArgs e)
+        {
+
+            switch (((Button)sender).Text)
+            {
+                case "数字":
+                    gameMode = 0;
+                    break;
+                case "朝代":
+                    gameMode = 1;
+                    break;
+                case "官阶":
+                    gameMode = 2;
+                    break;
+                case "军衔":
+                    gameMode = 3;
+                    break;
+            }
+
+            RefreshAllButtons();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            board = new int[N, N];
+            score = 0;
+
+            //设置两个不同的块为随机的2或4
+            Random rnd = new Random();
+            int n1 = rnd.Next(N * N);
+            int n2;
+            do
+            {
+                n2 = rnd.Next(N * N);
+            }
+            while (n1 == n2);
+
+            board[n1 / N, n1 % N] = rnd.Next(2) * 2 + 2; //设为2或4
+            board[n2 / N, n2 % N] = rnd.Next(2) * 2 + 2;
+
+            RefreshUI();
+
+        }
+
+        private void updateMaxScore()
+        {
+            labMaxScore.Text = score.ToString();
+            File.WriteAllText("score.txt", labMaxScore.Text);
+        }
     }
 
 }
