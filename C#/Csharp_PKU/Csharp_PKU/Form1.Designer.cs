@@ -88,6 +88,14 @@
             this.button57 = new System.Windows.Forms.Button();
             this.button58 = new System.Windows.Forms.Button();
             this.button59 = new System.Windows.Forms.Button();
+            this.button60 = new System.Windows.Forms.Button();
+            this.button61 = new System.Windows.Forms.Button();
+            this.button62 = new System.Windows.Forms.Button();
+            this.button63 = new System.Windows.Forms.Button();
+            this.button64 = new System.Windows.Forms.Button();
+            this.button65 = new System.Windows.Forms.Button();
+            this.button66 = new System.Windows.Forms.Button();
+            this.button67 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -697,6 +705,94 @@
             this.button59.UseVisualStyleBackColor = true;
             this.button59.Click += new System.EventHandler(this.btnShow_Clicked);
             // 
+            // button60
+            // 
+            this.button60.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button60.Location = new System.Drawing.Point(632, 169);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(105, 34);
+            this.button60.TabIndex = 10;
+            this.button60.Text = "MultiThreads";
+            this.button60.UseVisualStyleBackColor = true;
+            this.button60.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button61
+            // 
+            this.button61.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button61.Location = new System.Drawing.Point(632, 213);
+            this.button61.Name = "button61";
+            this.button61.Size = new System.Drawing.Size(105, 34);
+            this.button61.TabIndex = 10;
+            this.button61.Text = "Task";
+            this.button61.UseVisualStyleBackColor = true;
+            this.button61.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button62
+            // 
+            this.button62.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button62.Location = new System.Drawing.Point(632, 253);
+            this.button62.Name = "button62";
+            this.button62.Size = new System.Drawing.Size(105, 34);
+            this.button62.TabIndex = 10;
+            this.button62.Text = "Parallel Test";
+            this.button62.UseVisualStyleBackColor = true;
+            this.button62.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button63
+            // 
+            this.button63.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button63.Location = new System.Drawing.Point(632, 293);
+            this.button63.Name = "button63";
+            this.button63.Size = new System.Drawing.Size(105, 34);
+            this.button63.TabIndex = 10;
+            this.button63.Text = "Parallel Calc";
+            this.button63.UseVisualStyleBackColor = true;
+            this.button63.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button64
+            // 
+            this.button64.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button64.Location = new System.Drawing.Point(632, 333);
+            this.button64.Name = "button64";
+            this.button64.Size = new System.Drawing.Size(105, 34);
+            this.button64.TabIndex = 10;
+            this.button64.Text = "PLinq Test";
+            this.button64.UseVisualStyleBackColor = true;
+            this.button64.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button65
+            // 
+            this.button65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button65.Location = new System.Drawing.Point(632, 373);
+            this.button65.Name = "button65";
+            this.button65.Size = new System.Drawing.Size(105, 34);
+            this.button65.TabIndex = 10;
+            this.button65.Text = "Invoke";
+            this.button65.UseVisualStyleBackColor = true;
+            this.button65.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button66
+            // 
+            this.button66.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button66.Location = new System.Drawing.Point(632, 413);
+            this.button66.Name = "button66";
+            this.button66.Size = new System.Drawing.Size(105, 34);
+            this.button66.TabIndex = 10;
+            this.button66.Text = "Callback";
+            this.button66.UseVisualStyleBackColor = true;
+            this.button66.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
+            // button67
+            // 
+            this.button67.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button67.Location = new System.Drawing.Point(632, 453);
+            this.button67.Name = "button67";
+            this.button67.Size = new System.Drawing.Size(105, 34);
+            this.button67.TabIndex = 10;
+            this.button67.Text = "Await";
+            this.button67.UseVisualStyleBackColor = true;
+            this.button67.Click += new System.EventHandler(this.btnShow_Clicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -735,6 +831,14 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button67);
+            this.Controls.Add(this.button66);
+            this.Controls.Add(this.button65);
+            this.Controls.Add(this.button64);
+            this.Controls.Add(this.button63);
+            this.Controls.Add(this.button62);
+            this.Controls.Add(this.button61);
+            this.Controls.Add(this.button60);
             this.Controls.Add(this.button59);
             this.Controls.Add(this.button58);
             this.Controls.Add(this.button57);
@@ -832,6 +936,14 @@
         private System.Windows.Forms.Button button57;
         private System.Windows.Forms.Button button58;
         private System.Windows.Forms.Button button59;
+        private System.Windows.Forms.Button button60;
+        private System.Windows.Forms.Button button61;
+        private System.Windows.Forms.Button button62;
+        private System.Windows.Forms.Button button63;
+        private System.Windows.Forms.Button button64;
+        private System.Windows.Forms.Button button65;
+        private System.Windows.Forms.Button button66;
+        private System.Windows.Forms.Button button67;
     }
 }
 

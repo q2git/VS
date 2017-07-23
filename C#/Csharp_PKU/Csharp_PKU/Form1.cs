@@ -265,6 +265,32 @@ namespace Csharp_PKU
                 case "Xlst":
                     Week10.XlstTest.Test();
                     break;
+                case "MultiThreads":
+                    new Week11.MultiThreads().Show();
+                    break;
+                case "Task":
+                    Week11.TaskTest.Test();
+                    break;
+                case "Parallel Test":
+                    Week11.ParallelTest.InvokeTest();
+                    Week11.ParallelTest.ForTest();
+                    Week11.ParallelTest.ForEachTest();
+                    break;
+                case "Parallel Calc":
+                    Week11.ParallelCalc.Test();
+                    break;
+                case "PLinq Test":
+                    Week11.PLinqTest.Test();
+                    break;
+                case "Invoke":
+                    Week11.BeingEndInvoke.Test();
+                    break;
+                case "Callback":
+                    Week11.Callback.Test();
+                    break;
+                case "Await":
+                    new Week11.AwaitTest().Test();                   
+                    break;
             }
         }
     }

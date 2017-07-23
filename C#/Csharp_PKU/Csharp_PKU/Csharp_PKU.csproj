@@ -62,6 +62,16 @@
     <Compile Include="Week10\XmlTextReaderTest.cs" />
     <Compile Include="Week10\XmlTextWriterTest.cs" />
     <Compile Include="Week10\XsltTest.cs" />
+    <Compile Include="Week11\AwaitTest.cs" />
+    <Compile Include="Week11\BeingEndInvoke.cs" />
+    <Compile Include="Week11\Callback.cs" />
+    <Compile Include="Week11\MultiThreads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week11\ParallelCalc.cs" />
+    <Compile Include="Week11\ParallelTest.cs" />
+    <Compile Include="Week11\PLinqTest.cs" />
+    <Compile Include="Week11\TaskTest.cs" />
     <Compile Include="Week3\Enumeration.cs" />
     <Compile Include="Week3\Indexer.cs" />
     <Compile Include="Week3\Inheritance.cs" />
