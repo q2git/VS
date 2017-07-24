@@ -291,6 +291,15 @@ namespace Csharp_PKU
                 case "Await":
                     new Week11.AwaitTest().Test();                   
                     break;
+                case "AsyncHttp":
+                    new Week11.AsyncHttp().Start();
+                    break;
+                case "AsyncStream":
+                    Week11.AsyncStream.Test();
+                    break;
+                case "AwaitForm":
+                    new Week11.AwaitForm().Show();
+                    break;
             }
         }
     }

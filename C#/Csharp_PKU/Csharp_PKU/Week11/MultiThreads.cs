@@ -46,9 +46,10 @@ namespace Csharp_PKU.Week11
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@ namespace Csharp_PKU.Week11
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(344, 261);
             this.pictureBox1.TabIndex = 0;
@@ -63,55 +65,56 @@ namespace Csharp_PKU.Week11
             // 
             // panel1
             // 
-            this.panel1.Controls.AddRange(new System.Windows.Forms.Control[] {
-                                                                                this.button3,
-                                                                                this.button2,
-                                                                                this.button1});
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 229);
+            this.panel1.Location = new System.Drawing.Point(0, 226);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 32);
+            this.panel1.Size = new System.Drawing.Size(344, 35);
             this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 8);
-            this.button1.Name = "button1";
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right);
-            this.button2.Location = new System.Drawing.Point(144, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Suspend";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right);
-            this.button3.Location = new System.Drawing.Point(240, 8);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(240, 9);
             this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 24);
             this.button3.TabIndex = 2;
             this.button3.Text = "Resume";
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form1
+            // button2
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(144, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 24);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Suspend";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(32, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MultiThreads
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
             this.ClientSize = new System.Drawing.Size(344, 261);
-            this.Controls.AddRange(new System.Windows.Forms.Control[] {
-                                                                        this.panel1,
-                                                                        this.pictureBox1});
-            this.Name = "Form1";
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "MultiThreads";
             this.Text = "Moving Shapes";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

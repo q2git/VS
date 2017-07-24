@@ -62,6 +62,13 @@
     <Compile Include="Week10\XmlTextReaderTest.cs" />
     <Compile Include="Week10\XmlTextWriterTest.cs" />
     <Compile Include="Week10\XsltTest.cs" />
+    <Compile Include="Week11\AsyncStream.cs" />
+    <Compile Include="Week11\AwaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week11\AwaitForm.Designer.cs">
+      <DependentUpon>AwaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Week11\AwaitTest.cs" />
     <Compile Include="Week11\BeingEndInvoke.cs" />
     <Compile Include="Week11\Callback.cs" />
@@ -202,6 +209,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Week11\AwaitForm.resx">
+      <DependentUpon>AwaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week11\MultiThreads.resx">
+      <DependentUpon>MultiThreads.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Week4\Lambda.resx">
       <DependentUpon>Lambda.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +253,7 @@
     <Content Include="Week10\sampledata.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Week11\AsyncHttp.cs" />
     <Content Include="Week7\file.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
