@@ -40,6 +40,7 @@
             this.numFontSize = new System.Windows.Forms.NumericUpDown();
             this.cbFonts = new System.Windows.Forms.ComboBox();
             this.txtPenSize = new System.Windows.Forms.TextBox();
+            this.txtMid = new System.Windows.Forms.TextBox();
             this.txtBottom = new System.Windows.Forms.TextBox();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.txtWidth = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txtMid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picStamp)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numShiftY)).BeginInit();
@@ -130,9 +130,10 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(556, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(568, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(214, 511);
+            this.groupBox1.Size = new System.Drawing.Size(214, 514);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "参数设置";
@@ -245,6 +246,14 @@
             this.txtPenSize.Size = new System.Drawing.Size(51, 22);
             this.txtPenSize.TabIndex = 3;
             this.txtPenSize.TextChanged += new System.EventHandler(this.numValueChanged);
+            // 
+            // txtMid
+            // 
+            this.txtMid.Location = new System.Drawing.Point(70, 391);
+            this.txtMid.MaxLength = 4;
+            this.txtMid.Name = "txtMid";
+            this.txtMid.Size = new System.Drawing.Size(121, 22);
+            this.txtMid.TabIndex = 2;
             // 
             // txtBottom
             // 
@@ -403,14 +412,6 @@
             this.radioButton1.Text = "圆形";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.rdbtChanged);
-            // 
-            // txtMid
-            // 
-            this.txtMid.Location = new System.Drawing.Point(70, 391);
-            this.txtMid.MaxLength = 4;
-            this.txtMid.Name = "txtMid";
-            this.txtMid.Size = new System.Drawing.Size(121, 22);
-            this.txtMid.TabIndex = 2;
             // 
             // Form1
             // 
