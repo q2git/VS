@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,6 @@ namespace Trader
 {
     public partial class MainWindow : Form
     {
-        static string[] sh = { "http://www.cninfo.com.cn/information/sh/mb/shmblclist.html", "sh" };
 
         Dictionary<string, string[]> urls = new Dictionary<string, string[]>
         {
@@ -41,7 +41,7 @@ namespace Trader
             }
         };
 
-        readonly string url_chart = "http://image.sinajs.cn/newchart/{0}/n/sh{1}.gif";
+        Hashtable codelist = new Hashtable();
 
         public MainWindow()
         {
@@ -87,7 +87,7 @@ namespace Trader
             string pat = @"[0,3,6]\d{5} [\u4e00-\u9fa5]{3,4}";
             string html = await GetHttpString(url);
             MatchCollection matchList = Regex.Matches(html, pat);
-            //copied form SO
+            //copied form SO, convert matchlist to list
             var list = matchList.Cast<Match>().Select(match => match.Value).ToList();
             return list;
         }
@@ -97,7 +97,12 @@ namespace Trader
         private async void cbxMarket_SelectedValueChanged(object sender, EventArgs e)
         {
             cbxStock.Enabled = false;
-            cbxStock.DataSource = await GetStockList(urls[cbxMarket.Text][0]);
+
+            if (!codelist.ContainsKey(cbxMarket.Text))
+                codelist.Add(cbxMarket.Text, await GetStockList(urls[cbxMarket.Text][0]));
+
+            cbxStock.DataSource = codelist[cbxMarket.Text];
+
             cbxStock.Enabled = true;
         }
 
@@ -114,11 +119,22 @@ namespace Trader
 
         private async void button1_Click(object sender, EventArgs e)
         {
-
+            FlowLayoutPanel fp = new FlowLayoutPanel();
+            //fp.Dock = DockStyle.Fill;
+            fp.FlowDirection = FlowDirection.TopDown;
+            Button btn = new Button();
+            btn.Text = "Daily";
+            
+            
             PictureBox pic1 = new PictureBox();
             pic1.SizeMode = PictureBoxSizeMode.Zoom;
             pic1.Dock = DockStyle.Fill;
             pic1.Image = await GetHttpImage("600596");
+            //btn.Dock = DockStyle.Top;
+           // pic1.Controls.Add(btn);
+            //fp.Controls.Add(btn);
+            fp.Controls.Add(pic1);
+            //tableLayoutPanel1.Controls.Add(pic1);
             tableLayoutPanel1.Controls.Add(pic1);
         }
     }
