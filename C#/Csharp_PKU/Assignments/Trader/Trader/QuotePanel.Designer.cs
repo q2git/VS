@@ -48,27 +48,29 @@
             // 
             // labPercent
             // 
-            this.labPercent.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labPercent.Location = new System.Drawing.Point(4, 134);
+            this.labPercent.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labPercent.ForeColor = System.Drawing.Color.White;
+            this.labPercent.Location = new System.Drawing.Point(4, 131);
             this.labPercent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labPercent.MinimumSize = new System.Drawing.Size(67, 0);
             this.labPercent.Name = "labPercent";
-            this.labPercent.Size = new System.Drawing.Size(100, 31);
+            this.labPercent.Size = new System.Drawing.Size(100, 28);
             this.labPercent.TabIndex = 7;
             this.labPercent.Text = "pct";
-            this.labPercent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labPrice
             // 
-            this.labPrice.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPrice.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labPrice.ForeColor = System.Drawing.Color.White;
             this.labPrice.Location = new System.Drawing.Point(4, 103);
             this.labPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labPrice.MinimumSize = new System.Drawing.Size(67, 0);
             this.labPrice.Name = "labPrice";
-            this.labPrice.Size = new System.Drawing.Size(100, 31);
+            this.labPrice.Size = new System.Drawing.Size(100, 28);
             this.labPrice.TabIndex = 7;
             this.labPrice.Text = "pri";
-            this.labPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbxMarket
             // 
@@ -91,7 +93,7 @@
             this.btnMin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnMin.FlatAppearance.BorderSize = 0;
             this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMin.Location = new System.Drawing.Point(4, 169);
+            this.btnMin.Location = new System.Drawing.Point(4, 163);
             this.btnMin.Margin = new System.Windows.Forms.Padding(4);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(100, 30);
@@ -108,7 +110,7 @@
             this.btnDay.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnDay.FlatAppearance.BorderSize = 0;
             this.btnDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDay.Location = new System.Drawing.Point(4, 207);
+            this.btnDay.Location = new System.Drawing.Point(4, 201);
             this.btnDay.Margin = new System.Windows.Forms.Padding(4);
             this.btnDay.Name = "btnDay";
             this.btnDay.Size = new System.Drawing.Size(100, 30);
@@ -125,7 +127,7 @@
             this.btnWeek.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnWeek.FlatAppearance.BorderSize = 0;
             this.btnWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWeek.Location = new System.Drawing.Point(4, 245);
+            this.btnWeek.Location = new System.Drawing.Point(4, 239);
             this.btnWeek.Margin = new System.Windows.Forms.Padding(4);
             this.btnWeek.Name = "btnWeek";
             this.btnWeek.Size = new System.Drawing.Size(100, 30);
@@ -142,7 +144,7 @@
             this.btnMonth.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnMonth.FlatAppearance.BorderSize = 0;
             this.btnMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMonth.Location = new System.Drawing.Point(4, 283);
+            this.btnMonth.Location = new System.Drawing.Point(4, 277);
             this.btnMonth.Margin = new System.Windows.Forms.Padding(4);
             this.btnMonth.Name = "btnMonth";
             this.btnMonth.Size = new System.Drawing.Size(100, 30);
@@ -171,10 +173,10 @@
             this.picChart.BackColor = System.Drawing.Color.White;
             this.picChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChart.Location = new System.Drawing.Point(115, 0);
+            this.picChart.Location = new System.Drawing.Point(111, 0);
             this.picChart.Margin = new System.Windows.Forms.Padding(4);
             this.picChart.Name = "picChart";
-            this.picChart.Size = new System.Drawing.Size(661, 474);
+            this.picChart.Size = new System.Drawing.Size(567, 381);
             this.picChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChart.TabIndex = 1;
             this.picChart.TabStop = false;
@@ -191,7 +193,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.labName);
             this.flowLayoutPanel1.Controls.Add(this.labTime);
@@ -203,13 +204,13 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDay);
             this.flowLayoutPanel1.Controls.Add(this.btnWeek);
             this.flowLayoutPanel1.Controls.Add(this.btnMonth);
-            this.flowLayoutPanel1.Controls.Add(this.btnRun);
             this.flowLayoutPanel1.Controls.Add(this.txtError);
+            this.flowLayoutPanel1.Controls.Add(this.btnRun);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(115, 474);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(111, 381);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // labTime
@@ -224,10 +225,11 @@
             // 
             // btnRun
             // 
+            this.btnRun.AutoSize = true;
             this.btnRun.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnRun.Location = new System.Drawing.Point(3, 320);
+            this.btnRun.Location = new System.Drawing.Point(3, 342);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(102, 23);
+            this.btnRun.Size = new System.Drawing.Size(102, 33);
             this.btnRun.TabIndex = 10;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -235,13 +237,11 @@
             // 
             // txtError
             // 
-            this.txtError.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtError.Enabled = false;
             this.txtError.ForeColor = System.Drawing.Color.Red;
-            this.txtError.Location = new System.Drawing.Point(3, 349);
+            this.txtError.Location = new System.Drawing.Point(3, 314);
             this.txtError.Multiline = true;
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(102, 79);
+            this.txtError.Size = new System.Drawing.Size(102, 22);
             this.txtError.TabIndex = 11;
             this.txtError.Text = "error";
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuotePanel";
-            this.Size = new System.Drawing.Size(776, 474);
+            this.Size = new System.Drawing.Size(678, 381);
             ((System.ComponentModel.ISupportInitialize)(this.picChart)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

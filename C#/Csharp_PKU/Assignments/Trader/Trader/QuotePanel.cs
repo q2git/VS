@@ -16,6 +16,7 @@ namespace Trader
 {
     public partial class QuotePanel : UserControl
     {
+        private bool _running = false;
         private string _period = "min";
         private Hashtable _codes = new Hashtable(); //_codes[Market] = CodeList
         Dictionary<string, string[]> _urls = new Dictionary<string, string[]>
@@ -141,23 +142,30 @@ namespace Trader
 
             while (true)
             {
+                if (!_running) return; //stop runing
+
                 if (cbxStock.Text.Length > 6)
                 {
                     try
                     {
                         int n = rnd.Next(cbxStock.Items.Count);
                         string code = cbxStock.Items[n].ToString().Substring(0, 6);
-
-                        //string code = cbxStock.Text.Substring(0, 6);
                         string url = _urls[cbxMarket.Text][1] + code;
-                        labPercent.Text = await GetHttpString(url);
+                        //current price
+                        string[] quote = (await GetHttpString(url)).Split(',');
+                        labPrice.Text = quote[3];
+                        //price change rate
+                        float percent = float.Parse(quote[3]) / float.Parse(quote[2]) - 1;
+                        labPercent.Text = string.Format("{0:P}", percent);
 
+                        labPrice.BackColor = labPercent.BackColor = percent > 0f ? Color.Red : Color.Green;
+                        //trend chart
                         picChart.Image = await GetHttpImage(code);
 
                         labTime.Text = DateTime.Now.ToLongTimeString();
                     }catch(Exception e)
                     {
-                        txtError.Text = e.Message;
+                        picChart.Text = e.Message;
                     }
 
                 }
@@ -168,7 +176,11 @@ namespace Trader
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            _running = !_running;
+            btnRun.Text = _running ? "Stop" : "Run";
+
             Run();
         }
+
     }
 }
