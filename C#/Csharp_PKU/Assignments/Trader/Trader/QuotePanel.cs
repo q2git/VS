@@ -16,9 +16,11 @@ namespace Trader
 {
     public partial class QuotePanel : UserControl
     {
-        private bool _running = false;
+        HttpClient _httpClient;
         private string _period = "min";
-        private Hashtable _codes = new Hashtable(); //_codes[Market] = CodeList
+        private Hashtable _codes;
+        private CancellationTokenSource _cts;
+
         Dictionary<string, string[]> _urls = new Dictionary<string, string[]>
         {
             {"沪市主板", new string[]{
@@ -43,62 +45,78 @@ namespace Trader
             }
         };
 
-        public QuotePanel()
+        public QuotePanel(HttpClient client, Hashtable codes)
         {
+            _httpClient = client;
+            _codes = codes;
+
             InitializeComponent();
+        }
+
+        private void QuotePanel_Load(object sender, EventArgs e)
+        {
+
             this.Dock = DockStyle.Fill;
-            cbxMarket.DataSource = _urls.Keys.ToList();
             btnMin.Enabled = false;
             btnMin.BackColor = Color.Yellow;
-            labName.Text = Thread.CurrentThread.Name;
+
+            cbxMarket.DataSource = _urls.Keys.ToList();
+
+            //labName.Text = Thread.CurrentThread.ManagedThreadId.ToString();
+
+            _cts = new CancellationTokenSource();
+            Run(_cts.Token);
         }
 
-        //Get string from url
+        //get html content from url
         private async Task<string> GetHttpString(string url)
         {
-            HttpClient client = new HttpClient();
-            byte[] buffer = await client.GetByteArrayAsync(url);
-            string html = Encoding.Default.GetString(buffer);
-            return html;
+            try
+            {
+                byte[] buffer = await _httpClient.GetByteArrayAsync(url);
+                string html = Encoding.Default.GetString(buffer);
+                return html;
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
-        //Get chart for stock code
+        //get chart for stock code
         private async Task<Bitmap> GetHttpImage(string code)
         {
-            HttpClient client = new HttpClient();
-            string url = string.Format(
-                _urls[cbxMarket.Text][2],
-                _period,
-                code
-                );
+            try
+            {
+                string url = string.Format(_urls[cbxMarket.Text][2], _period, code);
 
-            byte[] buffer = await client.GetByteArrayAsync(url);
-            MemoryStream ms = new MemoryStream(buffer);
-            Bitmap bmp = new Bitmap(ms);
-            return bmp;
+                byte[] buffer = await _httpClient.GetByteArrayAsync(url);
+                MemoryStream ms = new MemoryStream(buffer);
+                Bitmap bmp = new Bitmap(ms);
+                return bmp;
+                
+            }
+            catch(Exception e)
+            {
+                //show loading image on exception
+                return Properties.Resources.loading;
+            }
+
         }
 
-        //Get stock list from url
-        private async Task<List<string>> GetStockList(string url)
-        {
-            string pat = @"[0,3,6]\d{5} [\u4e00-\u9fa5]{3,4}";
-            string html = await GetHttpString(url);
-            MatchCollection matchList = Regex.Matches(html, pat);
-            //copied form SO, convert matchlist to list
-            var list = matchList.Cast<Match>().Select(match => match.Value).ToList();
-            return list;
-        }
-
+        //change the K-chart type
         private void btnPeriod_Click(object sender, EventArgs e)
         {
             var btn = sender as Button;
 
             //reset all buttons
-            foreach (var ct in this.flowLayoutPanel1.Controls)
+            foreach (var bt in flowLayoutPanel1.Controls)
             {
-                if (!(ct is Button)) continue;
-                ((Button)ct).BackColor = Color.White;
-                ((Button)ct).Enabled = true;
+                if (!(bt is Button)) continue;
+                if (((Button)bt).Name == "btnRun") continue;
+
+                ((Button)bt).BackColor = Color.White;
+                ((Button)bt).Enabled = true;
             }
 
             btn.Enabled = false;
@@ -109,78 +127,80 @@ namespace Trader
 
 
         //Update stock list as the change of the market
-        private async void cbxMarket_SelectedValueChanged(object sender, EventArgs e)
+        private void cbxMarket_SelectedValueChanged(object sender, EventArgs e)
         {
             cbxStock.Enabled = false;
-
-            if (!_codes.ContainsKey(cbxMarket.Text))
-                _codes.Add(cbxMarket.Text, await GetStockList(_urls[cbxMarket.Text][0]));
-
             cbxStock.DataSource = _codes[cbxMarket.Text];
-
             cbxStock.Enabled = true;
         }
 
 
         //Update trading data
-        private async void cbxStock_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (!(cbxStock.Text.Length > 6)) return;
-
-            string code = ((ComboBox)sender).Text.Substring(0, 6);
-            string url = _urls[cbxMarket.Text][1] + code;
-
-            //textBox1.Text = await GetHttpString(url);
-            picChart.Image = await GetHttpImage(code);
-            //pictureBox2.Image = await GetHttpImage(code);
-        }
-
-        //Update trading data
-        private async void Run()
+        private async void Run(CancellationToken ct)
         {
             Random rnd = new Random();
 
             while (true)
             {
-                if (!_running) return; //stop runing
+                if (ct.IsCancellationRequested) return;
 
                 if (cbxStock.Text.Length > 6)
                 {
                     try
                     {
+                        //if (rnd.Next(10) == 1) throw new Exception(); //test
+
+                        //show stock randomly after market closed at 15:00
                         int n = rnd.Next(cbxStock.Items.Count);
-                        string code = cbxStock.Items[n].ToString().Substring(0, 6);
+                        string code = DateTime.Now.Hour>9 && DateTime.Now.Hour < 15 ? 
+                                      cbxStock.Text : cbxStock.Items[n].ToString();
+                        code = code.Substring(0, 6); 
                         string url = _urls[cbxMarket.Text][1] + code;
+
                         //current price
                         string[] quote = (await GetHttpString(url)).Split(',');
                         labPrice.Text = quote[3];
+
                         //price change rate
                         float percent = float.Parse(quote[3]) / float.Parse(quote[2]) - 1;
                         labPercent.Text = string.Format("{0:P}", percent);
-
                         labPrice.BackColor = labPercent.BackColor = percent > 0f ? Color.Red : Color.Green;
+                       
                         //trend chart
                         picChart.Image = await GetHttpImage(code);
 
                         labTime.Text = DateTime.Now.ToLongTimeString();
-                    }catch(Exception e)
+                    }
+                    catch (Exception e)
                     {
-                        picChart.Text = e.Message;
+                        //show loading image on exception
+                        picChart.Image = Properties.Resources.loading; 
                     }
 
                 }
-                await Task.Delay(10000);
+                await Task.Delay(5000);
             }
 
         }
 
+        
         private void btnRun_Click(object sender, EventArgs e)
         {
-            _running = !_running;
-            btnRun.Text = _running ? "Stop" : "Run";
-
-            Run();
+            if (_cts.IsCancellationRequested)
+            {
+                _cts = new CancellationTokenSource();
+                Run(_cts.Token);
+                btnRun.Text = "Stop";
+                btnRun.BackColor = Color.LightGray;
+            }
+            else
+            {
+                _cts.Cancel();
+                btnRun.BackColor = Color.LightGreen;
+                btnRun.Text = "Run";
+            }
         }
+
 
     }
 }

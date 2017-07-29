@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.picLoading = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -45,15 +47,29 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 491);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // picLoading
+            // 
+            this.picLoading.Image = global::Trader.Properties.Resources.loading;
+            this.picLoading.Location = new System.Drawing.Point(246, 45);
+            this.picLoading.Name = "picLoading";
+            this.picLoading.Size = new System.Drawing.Size(193, 165);
+            this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLoading.TabIndex = 1;
+            this.picLoading.TabStop = false;
+            this.picLoading.Visible = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 491);
+            this.Controls.Add(this.picLoading);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainWindow";
             this.Text = "Trader";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,6 +77,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox picLoading;
     }
 }
 
