@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 //using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -300,7 +301,24 @@ namespace Csharp_PKU
                 case "AwaitForm":
                     new Week11.AwaitForm().Show();
                     break;
+                case "DbTest":
+                    Week12.DbTest.Test();
+                    break;
+                case "DbTest2":
+                    Week12.DbTest2.Test();
+                    break;
+                case "AccessDB":
+                    rtxCode.Text = File.ReadAllText(@"Week12\AccessDB.cs");
+                    break;
+                case "SqlServerDB":
+                    rtxCode.Text = File.ReadAllText(@"Week12\SqlServerDB.cs");
+                    break;
             }
+        }
+
+        private void txtDigital_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar); //char.IsControl(e.KeyChar);
         }
     }
 }

@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +80,14 @@
     <Compile Include="Week11\ParallelTest.cs" />
     <Compile Include="Week11\PLinqTest.cs" />
     <Compile Include="Week11\TaskTest.cs" />
+    <Compile Include="Week12\AccessDB.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Week12\DbTest.cs" />
+    <Compile Include="Week12\DbTest2.cs" />
+    <Compile Include="Week12\SqlServerDB.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Week3\Enumeration.cs" />
     <Compile Include="Week3\Indexer.cs" />
     <Compile Include="Week3\Inheritance.cs" />
@@ -254,6 +263,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="Week11\AsyncHttp.cs" />
+    <Content Include="Week12\BIBLIO.MDB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Week7\file.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
